@@ -1,0 +1,16 @@
+{
+    "name": "stm-berri-proxy",
+    "version": "1.0.0",
+    "type": "module",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "dependencies": {
+        "cors": "^2.8.5",
+        "dotenv": "^16.3.1",
+        "express": "^4.18.2",
+        "gtfs-realtime-bindings": "^1.1.0",
+        "gtfs-rt-bindings": "^4.9.0",
+        "node-fetch": "^3.3.2"
+    }
+}
