@@ -18,20 +18,16 @@ app.get("/api/vehicles", async (req, res) => {
     if (!apiKey) {
       return res.status(400).json({ error: "STM_API_KEY missing" });
     }
-
     console.log("Fetching STM vehicle feed...");
     const response = await fetch(STM_VEHICLE_URL, { headers: { apikey: apiKey } });
     console.log("Response status:", response.status);
-
     if (!response.ok) {
       const text = await response.text();
       console.error("STM API error:", text);
       return res.status(response.status).send(text);
     }
-
     const buffer = await response.arrayBuffer();
     const feed = FeedMessage.decode(new Uint8Array(buffer));
-
     const vehicles = feed.entity
       .filter(e => e.vehicle)
       .map(e => {
@@ -52,7 +48,6 @@ app.get("/api/vehicles", async (req, res) => {
       });
 
     console.log(`✅ Total vehicles found: ${vehicles.length}`);
-    // console.log(vehicles);
 
     res.json({ vehicles });
   } catch (err) {

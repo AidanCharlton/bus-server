@@ -1,0 +1,55 @@
+# Node modules
+node_modules/
+
+# Build output
+dist/
+build/
+.out/
+.next/
+.vercel/
+.netlify/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+logs/
+*.log
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Dependency caches
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Optional: include lockfile
+# If this is a production project with teammates,
+# you may want to *keep* a single lockfile.
+
+# Editor-specific
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Testing
+coverage/
+.jest/
+
+# TypeScript
+*.tsbuildinfo
+
+# Misc build artifacts
+*.tgz
+*.gz
+*.zip
